@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="main_content">
+    <div class="card mb-3">
+        <div class="card-header" style="background: #038264; color:white;"><i class="fas fa-table mr-1"></i>DASHBOARD</div>
+        <div class="card-body">
+            <table class="table table-hover table-bordered custom">
+                <thead>
+                    <th>Date Submitted</th>    
+                    <th>Machine No.</th>
+                    <th>Machine Model</th>
+                    <th>Handler ID</th>
+                    <th>Handler PF</th>
+                    <th>Details of the Problem</th>
+                    <th>Capa and Recommendations</th>
+                    <th>Submitter</th>
+                    <th>Views</th>
+                    <th>Actions</th>
+                </thead>
+                <tbody id="fla_list_body"></tbody>
+            </table>
+        </div>
+    </div>
+</div>

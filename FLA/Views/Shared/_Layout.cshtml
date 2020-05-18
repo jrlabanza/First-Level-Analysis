@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>First Level Analysis</title>
+
+    <link rel="stylesheet" type="text/css" href="~/Content/datatables.net-dt/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/Assets/lib/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/daterangepicker.css" />
+    <link rel="stylesheet" type="text/css" href="~/Assets/css/css-ext.css" />
+    <script>
+        var base_url = "@Request.Url.GetLeftPart(UriPartial.Authority)@Url.Content("~")";
+        var img_path = base_url + "Uploads/";
+        var get_url = window.location.pathname;
+        var compare_url = get_url.substring(get_url.lastIndexOf('/') + 1);
+        var compare_url_view = get_url.substring(get_url.lastIndexOf('ViewFLAForm'));
+       
+        
+    </script>
+    <meta name="description" content="The description of my page" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse navbar-expand-lg navbar-light bg-dreams">
+            <a class="navbar-brand" href="#">First Level Analysis</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarNavDropdown" class="navbar-collapse collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="~/FLA/Index">
+                            <span class="fa fa-home"></span> Home <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+
+
+                </ul>
+
+            </div>
+        </nav>
+
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+                <ul class="nav nav-pills flex-column">
+
+
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <a class="nav-link" href="~/FLA/Index">
+                                    <span class="fa fa-table"></span> Dashboard <span class="sr-only">(current)</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <a class="nav-link" href="~/FLA/CreateFLAForm">
+                                    <span class="fa fa-plus-square"></span> Create Form
+                                </a>
+                            </div>
+                        </div>
+                        @*<div class="panel panel-default">
+                            <div class="panel-heading">
+                                <a class="nav-link" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                                    <span class="fa fa-th-list"></span> List of Projects
+                                </a>
+                            </div>
+                            <div id="collapse3" class="panel-collapse collapse" style="font-size:12px;">
+                                <div class="panel-body">
+                                    <a class="nav-link" href="#collapse3">
+                                        <span class="fa fa-search"></span> Search Projects
+                                    </a>
+                                    <a class="nav-link" href="#collapse3">
+                                        <span class="fa fa-user-clock"></span> Pending Status per Process
+                                    </a>
+                                    <a class="nav-link" href="#collapse3">
+                                        <span class="fa fa-user-clock"></span> Pending Status per Swim Lane Owner
+                                    </a>
+                                    <a class="nav-link" href="#collapse3">
+                                        <span class="fa fa-check"></span> Finished Projects
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <a class="nav-link" href="#collapse1">
+                                    <span class="fa fa-table"></span> Project Owners <span class="sr-only">(current)</span>
+                                </a>
+                            </div>
+                        </div>*@
+                    </div>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+
+    @RenderBody()
+
+    <script type="text/javascript" src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap-notify.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/moment.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/daterangepicker.js"></script>
+    <script type="text/javascript" src="~/Scripts/jszip.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/FileSaver.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/showFLAtable.js"></script>
+    <script type="text/javascript" src="~/Assets/js/showFLAData.js"></script>
+    <script type="text/javascript" src="~/Assets/js/jscript.js"></script>
+    
+    
+</body>
+</html>

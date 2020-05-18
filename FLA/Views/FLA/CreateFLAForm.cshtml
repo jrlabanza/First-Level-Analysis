@@ -1,0 +1,165 @@
+﻿@{
+    ViewBag.Title = "CreateFLAForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main_content">
+    <div class="card mb-3">
+        <div class="card-header"><i class="fas fa-table mr-1"></i>FLA INPUT</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-4">
+                    <div>Problem Description</div>
+                </div>
+                <div class="col-2">
+                    <div>Tester No</div>
+                </div>
+                <div class="col-2">
+                    <div>Tester Model</div>
+                </div>
+                <div class="col-2">
+                    <div>Handler ID</div>
+                </div>
+                <div class="col-2">
+                    <div>Handler Model</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <input id="problem_description" class="form-control form-control-sm" />
+                </div>
+
+                <div class="col-2">
+                    <input list="mac_no" id="machine_no" class="form-control form-control-sm mac_auto" style="text-transform: uppercase"/>
+                    <datalist id="mac_no">
+                    </datalist>
+                </div>
+                <div class="col-2">
+                    <input id="machine_model" class="form-control form-control-sm mac_model" readonly />
+                </div>
+                <div class="col-2">
+                    <input id="handler_id" class="form-control form-control-sm" readonly />
+                </div>
+                <div class="col-2">
+                    <input id="handler_pf" class="form-control form-control-sm" readonly />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <div>Package</div>
+                </div>
+                <div class="col-2">
+                    <div>Product Name</div>
+                </div>
+                <div class="col-2">
+                    <div>Site</div>
+                </div>
+                <div class="col-2">
+                    <div>Loadboard Name</div>
+                </div>
+                <div class="col-2">
+                    <div>Loadboard No</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <input id="package" class="form-control form-control-sm" readonly/>
+                </div>
+                <div class="col-2">
+                    <input id="product_name" class="form-control form-control-sm"/>
+                </div>
+                <div class="col-2">
+                    <input id="site" class="form-control form-control-sm"/>
+                </div>
+                <div class="col-2">
+                    <input id="loadboard_name" class="form-control form-control-sm"/>
+                </div>
+                <div class="col-2">
+                    <input id="loadboard_no" class="form-control form-control-sm"/>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <div>Details of the Problem</div>
+                    <textarea class="form-control" name="details_of_the_problem" rows="5" cols="70" id="details_of_the_problem"></textarea>
+                </div>
+                <div class="col-6">
+                    <div>Machine Status and Remarks</div>
+                    <textarea class="form-control" name="machine_status_and_remarks" rows="5" cols="70" id="machine_status_and_remarks"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div>Containment Actions</div>
+                    <table class="table table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                @*<th>AI#</th>*@
+                                <th>ACTION DONE</th>
+                                <th>WHO</th>
+                                <th>WHEN</th>
+                                <th>REMARKS</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                @*<td><input id="ai_no_0" data-detail-row="0" class="form-control form-control-sm ai_no" /></td>*@
+                                <td class="col-5"><textarea id="what_0" class="form-control form-control-sm what" rows="5"></textarea></td>
+                                <td class="col-2"><input id="who_0" class="form-control form-control-sm who" /></td>
+                                <td class="col-2"><input id="when_0" type="text" class="form-control form-control-sm when customdate" /></td>
+                                <td class="col-3"><textarea id="remarks_0" class="form-control form-control-sm remarks"rows="5"></textarea></td>
+                                <td class="col-1"><button class="btn btn-primary btn-sm" id="add_form_containment_action"><i class="fa fa-plus"></i></button></td>
+                            </tr>
+                        </thead>
+                        <tbody id="append_containment_actions"></tbody>
+                    </table>
+                </div>
+                <div class="col-6">
+                    <div>Attachments</div>
+                    <input type="file" id="flaImageFile" class="form-control-file flaImageFile" multiple />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div>Root Cause and Analysis</div>
+                    <table class="table table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Machine</th>
+                                <th>Outflow</th>
+                                <th>Systemic Root Cause</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td><input id="machine_0" class="form-control form-control-sm machine" /></td>
+                                <td><input id="outflow_0" class="form-control form-control-sm outflow" /></td>
+                                <td><input id="systemic_root_cause_0" class="form-control form-control-sm systemic_root_cause" /></td>
+                                <td><button class="btn btn-primary btn-sm" id="add_root_cause"><i class="fa fa-plus"></i></button></td>
+                            </tr>
+                        </thead>
+                        <tbody id="append_root_cause"></tbody>
+                    </table>
+                </div>
+                <div class="col-6">
+                    <div>Capa and Recommendations</div>
+                    <textarea class="form-control" id="capa_and_recommendations" cols="70" rows="5"></textarea>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-4 offset-4">
+                    <div>Username</div>
+                    <select name='user' id='user' class='inputSelect form-control'></select>
+                </div>
+                <div class="col-4 offset-4">
+                    <div>Password</div>
+                    <input type='password' name='pass' id='pass' class="form-control" placeholder='PASSWORD'>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <button class="btn btn-success submit_fla" style="float:right">SUBMIT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
